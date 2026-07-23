@@ -1,7 +1,11 @@
-import './App.css'
+import './styles/App.css';
+import Header from './components/Header';
 
 export default function App() {
-    return (
-        <h1>Shopping Cart</h1>
-    )
+  return (
+    <>
+      <Header />
+      <main></main>
+    </>
+  );
 }
