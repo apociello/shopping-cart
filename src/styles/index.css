@@ -1,9 +1,9 @@
 @font-face {
-  font-display: swap;
-  font-family: 'Sora';
+  font-display: swap; 
+  font-family: 'Fredoka';
   font-style: normal;
   font-weight: 400;
-  src: url('../assets/fonts/sora.woff2') format('woff2');
+  src: url('../assets/fonts/fredoka.woff2') format('woff2'); 
 }
 
 * {
@@ -22,5 +22,5 @@ body,
   display: flex;
   flex-direction: column;
   background-color: rgb(255 255 255);
-  font-family: Sora, Arial;
+  font-family: Fredoka, Arial;
 }
