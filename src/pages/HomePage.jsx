@@ -1,7 +1,7 @@
 import { Link } from 'react-router';
 import styles from '../styles/Home.module.css';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <main className={styles.main}>
       <div className={styles.info}>
