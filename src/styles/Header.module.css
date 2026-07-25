@@ -1,16 +1,16 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgb(230 230 230);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgb(230 230 230);
 }
 
 .nav {
-    display: flex;
-    gap: 2rem;
-    margin-right: 2rem;
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
 }
 
 .nav a {
@@ -26,5 +26,5 @@
 }
 
 .logo {
-    width: 130px;
+  width: 130px;
 }
