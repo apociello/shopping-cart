@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Product from '../components/Product';
+import Loading from '../components/Loading';
 import styles from '../styles/ShopPage.module.css'
 
 export default function ShopPage() {
@@ -13,7 +14,7 @@ export default function ShopPage() {
 
   console.log(data);
 
-  if (!data) return 'loading...';
+  if (!data) return <Loading />;
 
   return (
     <main className={styles.main}>
