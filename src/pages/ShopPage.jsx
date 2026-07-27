@@ -4,19 +4,26 @@ import Loading from '../components/Loading';
 import ErrorPage from './ErrorPage';
 import styles from '../styles/ShopPage.module.css';
 
+let cachedProducts = null;
+
 export default function ShopPage() {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState(cachedProducts);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(!cachedProducts);
 
   useEffect(() => {
+    if (cachedProducts) return;
+
     fetch('https://fakestoreapi.com/products')
       .then((response) => {
-        if (!response.ok) throw new Error('server error');
+        if (!response.ok) throw new Error();
         return response.json();
       })
-      .then((data) => setData(data))
-      .catch((error) => setError(error))
+      .then((data) => {
+        cachedProducts = data;
+        setData(data);
+      })
+      .catch(() => setError(true))
       .finally(() => setLoading(false));
   }, []);
 
