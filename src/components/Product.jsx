@@ -4,10 +4,10 @@ import QuantitySelector from './QuantitySelector';
 import styles from '../styles/Product.module.css';
 
 export default function Product({ id, image, title, price }) {
-  const [quantity, setQuantity] = useState(0);
-  const [selector, setSelector] = useState(false);
+  const { cartItems, updateItem } = useOutletContext();
+  const cartItem = cartItems.find((item) => item.id === id);
 
-  const { updateItem } = useOutletContext();
+  const [quantity, setQuantity] = useState(cartItem ? cartItem.quantity : 0);
 
   return (
     <div className={styles.product}>
@@ -18,22 +18,17 @@ export default function Product({ id, image, title, price }) {
       </div>
 
       <div>
-        {selector ? (
-          quantity == 0 ? (
-            setSelector(false)
-          ) : (
-            <QuantitySelector
-              id={id}
-              quantity={quantity}
-              setQuantity={setQuantity}
-            />
-          )
+        {quantity > 0 ? (
+          <QuantitySelector
+            id={id}
+            quantity={quantity}
+            setQuantity={setQuantity}
+          />
         ) : (
           <button
             className={styles.button}
             onClick={() => {
               setQuantity(1);
-              setSelector(true);
               updateItem(id, 1);
             }}
           >
