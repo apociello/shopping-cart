@@ -43,6 +43,7 @@ export default function ShopPage() {
       {data.map((product) => (
         <Product
           key={product.id}
+          id={product.id}
           image={product.image}
           title={product.title}
           price={product.price}

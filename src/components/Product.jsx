@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useOutletContext } from 'react-router';
 import QuantitySelector from './QuantitySelector';
 import styles from '../styles/Product.module.css';
 
-export default function Product({ image, title, price }) {
+export default function Product({ id, image, title, price }) {
   const [quantity, setQuantity] = useState(0);
   const [selector, setSelector] = useState(false);
+
+  const { updateItem } = useOutletContext();
 
   return (
     <div className={styles.product}>
@@ -19,7 +22,11 @@ export default function Product({ image, title, price }) {
           quantity == 0 ? (
             setSelector(false)
           ) : (
-            <QuantitySelector quantity={quantity} setQuantity={setQuantity} />
+            <QuantitySelector
+              id={id}
+              quantity={quantity}
+              setQuantity={setQuantity}
+            />
           )
         ) : (
           <button
@@ -27,6 +34,7 @@ export default function Product({ image, title, price }) {
             onClick={() => {
               setQuantity(1);
               setSelector(true);
+              updateItem(id, 1);
             }}
           >
             Add to cart
