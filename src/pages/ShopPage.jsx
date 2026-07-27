@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Product from '../components/Product';
 import Loading from '../components/Loading';
+import ErrorPage from './ErrorPage';
 import styles from '../styles/ShopPage.module.css';
 
 export default function ShopPage() {
@@ -23,10 +24,11 @@ export default function ShopPage() {
 
   if (error)
     return (
-      <div className={styles.error}>
-        <h1>Something went wrong</h1>
-        <p>Failed to load products. Please try again later.</p>
-      </div>
+      <ErrorPage
+        header={false}
+        title="Something went wrong"
+        message="Failed to load products. Please try again later."
+      />
     );
 
   return (

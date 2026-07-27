@@ -12,7 +12,13 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: (
+      <ErrorPage
+        header={true}
+        title="Page not found"
+        message="The page you're looking for doesn't exist..."
+      />
+    ),
     children: [
       { index: true, element: <HomePage /> },
       { path: 'shop', element: <ShopPage /> },

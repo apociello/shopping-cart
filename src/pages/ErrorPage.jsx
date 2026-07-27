@@ -1,12 +1,13 @@
 import Header from '../components/Header';
-import styles from '../styles/ErrorPage.module.css'
-export default function ErrorPage() {
+import styles from '../styles/ErrorPage.module.css';
+export default function ErrorPage({ header, title, message }) {
   return (
     <>
-      <Header />
+      {header && <Header />}
+
       <main className={styles.main}>
-        <h1 className={styles.h1}>Page not found</h1>
-        <p className={styles.p}>The page you're looking for doesn't exist...</p>
+        <h1 className={styles.h1}>{title}</h1>
+        <p className={styles.p}>{message}</p>
       </main>
     </>
   );
