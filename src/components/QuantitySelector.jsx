@@ -2,7 +2,7 @@ import { Trash, Minus, Plus } from 'lucide-react';
 import { useOutletContext } from 'react-router';
 import styles from '../styles/QuantitySelector.module.css';
 
-export default function QuantitySelector({ id, quantity, setQuantity }) {
+export default function QuantitySelector({ id, quantity }) {
   const { updateItem, deleteItem } = useOutletContext();
 
   return (
@@ -10,8 +10,6 @@ export default function QuantitySelector({ id, quantity, setQuantity }) {
       <button
         className={styles.button}
         onClick={() => {
-          setQuantity(quantity - 1);
-
           if (quantity > 1) {
             updateItem(id, quantity - 1);
           } else {
@@ -25,7 +23,6 @@ export default function QuantitySelector({ id, quantity, setQuantity }) {
       <button
         className={styles.button}
         onClick={() => {
-          setQuantity(quantity + 1);
           updateItem(id, quantity + 1);
         }}
       >
