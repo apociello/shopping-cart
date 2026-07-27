@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <>
-      <Header />
+      <Header cartItems={cartItems} />
       <Outlet context={{ updateItem, deleteItem }} />
     </>
   );
