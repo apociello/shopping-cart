@@ -14,7 +14,6 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: (
       <ErrorPage
-        header={true}
         title="Page not found"
         message="The page you're looking for doesn't exist..."
       />
