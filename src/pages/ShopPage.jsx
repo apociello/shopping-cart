@@ -1,18 +1,18 @@
 import { useState, useEffect } from 'react';
+import { useOutletContext } from 'react-router';
 import Product from '../components/Product';
 import Loading from '../components/Loading';
 import ErrorPage from './ErrorPage';
 import styles from '../styles/ShopPage.module.css';
 
-let cachedProducts = null;
-
 export default function ShopPage() {
-  const [data, setData] = useState(cachedProducts);
+  const { products, setProducts } = useOutletContext();
+
   const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(!cachedProducts);
+  const [loading, setLoading] = useState(!products);
 
   useEffect(() => {
-    if (cachedProducts) return;
+    if (products) return;
 
     fetch('https://fakestoreapi.com/products')
       .then((response) => {
@@ -20,12 +20,11 @@ export default function ShopPage() {
         return response.json();
       })
       .then((data) => {
-        cachedProducts = data;
-        setData(data);
+        setProducts(data);
       })
       .catch(() => setError(true))
       .finally(() => setLoading(false));
-  }, []);
+  }, [products, setProducts]);
 
   if (loading) return <Loading />;
 
@@ -40,7 +39,7 @@ export default function ShopPage() {
 
   return (
     <main className={styles.main}>
-      {data.map((product) => (
+      {products.map((product) => (
         <Product
           key={product.id}
           id={product.id}

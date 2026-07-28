@@ -4,6 +4,7 @@ import Header from './components/Header';
 import './styles/App.css';
 
 export default function App() {
+  const [products, setProducts] = useState(null);
   const [cartItems, setCartItems] = useState([]);
 
   function updateItem(id, quantity) {
@@ -33,7 +34,9 @@ export default function App() {
   return (
     <>
       <Header cartItems={cartItems} />
-      <Outlet context={{ cartItems, updateItem, deleteItem }} />
+      <Outlet
+        context={{ products, setProducts, cartItems, updateItem, deleteItem }}
+      />
     </>
   );
 }

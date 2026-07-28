@@ -19,7 +19,9 @@ export default function QuantitySelector({ id, quantity }) {
       >
         {quantity <= 1 ? <Trash size={17} /> : <Minus size={17} />}
       </button>
+
       <p>{quantity}</p>
+
       <button
         className={styles.button}
         onClick={() => {
