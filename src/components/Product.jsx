@@ -17,7 +17,11 @@ export default function Product({ id, image, title, price }) {
 
       <div>
         {quantity > 0 ? (
-          <QuantitySelector id={id} quantity={quantity} />
+          <QuantitySelector
+            id={id}
+            quantity={quantity}
+            className={styles.productWrapper}
+          />
         ) : (
           <button
             className={styles.button}

@@ -48,3 +48,8 @@
 .button:hover {
   background-color: #0f7e8b;
 }
+
+.productWrapper {
+  width: 100%;
+  margin-top: 1.5rem;
+}

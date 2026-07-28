@@ -2,11 +2,11 @@ import { Trash, Minus, Plus } from 'lucide-react';
 import { useOutletContext } from 'react-router';
 import styles from '../styles/QuantitySelector.module.css';
 
-export default function QuantitySelector({ id, quantity }) {
+export default function QuantitySelector({ id, quantity, className }) {
   const { updateItem, deleteItem } = useOutletContext();
 
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${className}`}>
       <button
         className={styles.button}
         onClick={() => {
