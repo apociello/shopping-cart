@@ -5,7 +5,6 @@
 }
 
 .items {
-  flex: 3;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 10px;
   align-self: flex-start;
@@ -17,12 +16,11 @@
 }
 
 .orderSummary {
-  flex: 1;
   align-self: flex-start;
   border: 1px solid rgb(235, 235, 235);
   border-radius: 10px;
   padding: 0.5rem 1rem;
-  min-width: 280px;
+  min-width: 300px;
   color: rgb(52, 52, 52);
 }
 
@@ -32,7 +30,6 @@
   align-items: center;
   margin: 0.8rem 0rem;
 }
-
 
 .orderSummary div:nth-child(2) {
   border-bottom: 1px solid rgb(235, 235, 235);
