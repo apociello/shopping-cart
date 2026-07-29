@@ -35,7 +35,14 @@ export default function App() {
     <>
       <Header cartItems={cartItems} />
       <Outlet
-        context={{ products, setProducts, cartItems, updateItem, deleteItem }}
+        context={{
+          products,
+          setProducts,
+          cartItems,
+          setCartItems,
+          updateItem,
+          deleteItem,
+        }}
       />
     </>
   );

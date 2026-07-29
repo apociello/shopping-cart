@@ -1,9 +1,11 @@
 import { useOutletContext } from 'react-router';
+import { useNavigate } from 'react-router';
 import CartItem from '../components/CartItem';
 import styles from '../styles/CartPage.module.css';
 
 export default function CartPage() {
-  const { products, cartItems } = useOutletContext();
+  const { products, cartItems, setCartItems } = useOutletContext();
+  const navigate = useNavigate();
 
   const cartProducts = cartItems.map((item) => {
     const product = products.find((product) => product.id === item.id);
@@ -42,21 +44,34 @@ export default function CartPage() {
             ))}
           </div>
 
-          <div className={styles.orderSummary}>
-            <div>
-              <p>Subtotal </p>
-              <p>{subtotal.toFixed(2)} €</p>
+          <div className="right">
+            <div className={styles.orderSummary}>
+              <div>
+                <p>Subtotal </p>
+                <p>{subtotal.toFixed(2)} €</p>
+              </div>
+
+              <div>
+                <p>Shipping </p>
+                <p>{shipping.toFixed(2)} €</p>
+              </div>
+
+              <div>
+                <p>Total </p>
+                <p>{total.toFixed(2)} €</p>
+              </div>
             </div>
 
-            <div>
-              <p>Shipping </p>
-              <p>{shipping.toFixed(2)} €</p>
-            </div>
-
-            <div>
-              <p>Total </p>
-              <p>{total.toFixed(2)} €</p>
-            </div>
+            <button
+              className={styles.button}
+              onClick={() => {
+                alert('Thank you for your purchase!');
+                setCartItems([]);
+                navigate('/');
+              }}
+            >
+              Pay
+            </button>
           </div>
         </>
       )}
