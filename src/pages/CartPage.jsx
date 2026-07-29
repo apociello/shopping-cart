@@ -45,17 +45,17 @@ export default function CartPage() {
           <div className={styles.orderSummary}>
             <div>
               <p>Subtotal </p>
-              <p>{subtotal} €</p>
+              <p>{subtotal.toFixed(2)} €</p>
             </div>
 
             <div>
               <p>Shipping </p>
-              <p>{shipping} €</p>
+              <p>{shipping.toFixed(2)} €</p>
             </div>
 
             <div>
               <p>Total </p>
-              <p>{total} €</p>
+              <p>{total.toFixed(2)} €</p>
             </div>
           </div>
         </>

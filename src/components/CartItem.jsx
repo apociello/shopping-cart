@@ -16,7 +16,7 @@ export default function CartItem({ id, quantity, image, title, price }) {
           className={styles.cartWrapper}
         />
 
-        <p>{price * quantity} €</p>
+        <p>{(price * quantity).toFixed(2)} €</p>
       </div>
     </div>
   );
