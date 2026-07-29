@@ -28,9 +28,12 @@ export default function CartPage() {
   return (
     <main className={styles.main}>
       {cartProducts.length < 1 ? (
-        <h1 className={styles.h1}>No items in the cart!</h1>
+        <div className={styles.emptyCart}>
+          <h1>Your cart is empty</h1>
+          <p>Add something to get started.</p>
+        </div>
       ) : (
-        <>
+        <div className={styles.contentCart}>
           <div className={styles.items}>
             {cartProducts.map((product) => (
               <CartItem
@@ -73,7 +76,7 @@ export default function CartPage() {
               Pay
             </button>
           </div>
-        </>
+        </div>
       )}
     </main>
   );
