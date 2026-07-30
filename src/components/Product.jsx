@@ -1,6 +1,7 @@
 import { useOutletContext } from 'react-router';
 import QuantitySelector from './QuantitySelector';
 import styles from '../styles/Product.module.css';
+import buttonStyles from '../styles/Button.module.css';
 
 export default function Product({ id, image, title, price }) {
   const { cartItems, updateItem } = useOutletContext();
@@ -24,7 +25,7 @@ export default function Product({ id, image, title, price }) {
           />
         ) : (
           <button
-            className={styles.button}
+            className={`${buttonStyles.button} ${styles.productBtn}`}
             onClick={() => {
               updateItem(id, 1);
             }}

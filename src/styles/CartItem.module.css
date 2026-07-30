@@ -9,32 +9,32 @@
   border-bottom: 1px solid rgb(235, 235, 235);
 }
 
-.left {
+.item .left {
   flex: 1;
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-.right {
+.left .image {
+  height: 60px;
+  width: 60px;
+  object-fit: contain;
+}
+
+.left .title {
+  font-size: 0.9rem;
+}
+
+.item .right {
   width: 220px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.title {
-  font-size: 0.9rem;
-}
-
 .item:last-child {
   border-bottom: none;
-}
-
-.image {
-  height: 60px;
-  width: 60px;
-  object-fit: contain;
 }
 
 .cartWrapper {

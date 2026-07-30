@@ -31,7 +31,6 @@ export default function ShopPage() {
   if (error)
     return (
       <ErrorPage
-        header={false}
         title="Something went wrong"
         message="Failed to load products. Please try again later."
       />

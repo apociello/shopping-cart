@@ -8,9 +8,9 @@ export default function Header({ cartItems }) {
 
   return (
     <header className={styles.header}>
-      <img src={logo} className={styles.logo} alt="" />
+      <img src={logo} alt="" />
 
-      <nav className={styles.nav}>
+      <nav>
         <Link to="/">Home</Link>
 
         <Link to="/shop">Shop</Link>

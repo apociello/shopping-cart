@@ -8,7 +8,6 @@ export default function QuantitySelector({ id, quantity, className }) {
   return (
     <div className={`${styles.wrapper} ${className}`}>
       <button
-        className={styles.button}
         onClick={() => {
           if (quantity > 1) {
             updateItem(id, quantity - 1);
@@ -23,7 +22,6 @@ export default function QuantitySelector({ id, quantity, className }) {
       <p>{quantity}</p>
 
       <button
-        className={styles.button}
         onClick={() => {
           updateItem(id, quantity + 1);
         }}

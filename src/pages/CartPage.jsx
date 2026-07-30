@@ -2,6 +2,7 @@ import { useOutletContext } from 'react-router';
 import { useNavigate } from 'react-router';
 import CartItem from '../components/CartItem';
 import styles from '../styles/CartPage.module.css';
+import buttonStyles from '../styles/Button.module.css';
 
 export default function CartPage() {
   const { products, cartItems, setCartItems } = useOutletContext();
@@ -66,7 +67,7 @@ export default function CartPage() {
             </div>
 
             <button
-              className={styles.button}
+              className={`${buttonStyles.button} ${styles.payBtn}`}
               onClick={() => {
                 alert('Thank you for your purchase!');
                 setCartItems([]);

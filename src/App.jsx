@@ -29,8 +29,6 @@ export default function App() {
     setCartItems(cartItems.filter((item) => item.id !== id));
   }
 
-  console.log(cartItems);
-
   return (
     <>
       <Header cartItems={cartItems} />
