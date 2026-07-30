@@ -30,6 +30,11 @@
   color: rgb(19, 153, 168);
 }
 
+.cartIcon {
+  width: 20px;
+  height: 20px;
+}
+
 .badge {
   align-self: flex-start;
   margin-top: -5px;
@@ -43,4 +48,34 @@
   color: white;
   font-size: 0.7rem;
   font-weight: 600;
+}
+
+@media (max-width: 580px) {
+  .header {
+    padding: 1rem 0.6rem;
+  }
+
+  .header img {
+    width: 75px;
+  }
+
+  .header nav {
+    gap: 0.8rem;
+    margin-right: 0;
+  }
+
+  .header nav a {
+    font-size: 1rem;
+  }
+
+  .cartIcon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .badge {
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.6rem;
+  }
 }

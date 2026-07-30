@@ -4,3 +4,9 @@
   gap: 1.5rem;
   padding: 2.5rem 4rem;
 }
+
+@media (max-width: 490px) {
+  .main {
+    padding: 1.5rem;
+  }
+}

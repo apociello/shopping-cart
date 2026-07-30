@@ -16,7 +16,7 @@ export default function Header({ cartItems }) {
         <Link to="/shop">Shop</Link>
 
         <Link to="/cart">
-          <ShoppingCart size={20} />
+          <ShoppingCart className={styles.cartIcon} />
           <span
             className={styles.badge}
             style={{ visibility: numItems > 0 ? 'visible' : 'hidden' }}
