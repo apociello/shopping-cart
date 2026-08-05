@@ -29,6 +29,7 @@ export default function Product({ id, image, title, price }) {
             onClick={() => {
               updateItem(id, 1);
             }}
+            aria-label={`Add ${title} to cart`}
           >
             Add to cart
           </button>

@@ -49,20 +49,24 @@ export default function CartPage() {
           </div>
 
           <div className="right">
-            <div className={styles.orderSummary}>
+            <div
+              className={styles.orderSummary}
+              role="region"
+              aria-label="Order summary"
+            >
               <div>
-                <p>Subtotal </p>
-                <p>{subtotal.toFixed(2)} €</p>
+                <p id="subtotal">Subtotal </p>
+                <p aria-labelledby="subtotal">{subtotal.toFixed(2)} €</p>
               </div>
 
               <div>
-                <p>Shipping </p>
-                <p>{shipping.toFixed(2)} €</p>
+                <p id="shipping">Shipping </p>
+                <p aria-labelledby="shipping">{shipping.toFixed(2)} €</p>
               </div>
 
               <div>
-                <p>Total </p>
-                <p>{total.toFixed(2)} €</p>
+                <p id="total">Total </p>
+                <p aria-labelledby="total">{total.toFixed(2)} €</p>
               </div>
             </div>
 

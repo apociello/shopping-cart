@@ -8,18 +8,19 @@ export default function Header({ cartItems }) {
 
   return (
     <header className={styles.header}>
-      <img src={logo} alt="" />
+      <img src={logo} alt="Store logo" />
 
       <nav>
         <Link to="/">Home</Link>
 
         <Link to="/shop">Shop</Link>
 
-        <Link to="/cart">
+        <Link to="/cart" aria-label={`Cart: ${numItems} items`}>
           <ShoppingCart className={styles.cartIcon} />
           <span
             className={styles.badge}
             style={{ visibility: numItems > 0 ? 'visible' : 'hidden' }}
+            aria-hidden="true"
           >
             {numItems}
           </span>

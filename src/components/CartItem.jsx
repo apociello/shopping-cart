@@ -16,7 +16,9 @@ export default function CartItem({ id, quantity, image, title, price }) {
           className={styles.cartWrapper}
         />
 
-        <p>{(price * quantity).toFixed(2)} €</p>
+        <p aria-label={`Total: ${(price * quantity).toFixed(2)} €`}>
+          {(price * quantity).toFixed(2)} €
+        </p>
       </div>
     </div>
   );

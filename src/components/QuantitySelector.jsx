@@ -15,6 +15,7 @@ export default function QuantitySelector({ id, quantity, className }) {
             deleteItem(id);
           }
         }}
+        aria-label={quantity <= 1 ? 'Remove item' : 'Decrease quantity'}
       >
         {quantity <= 1 ? <Trash size={17} /> : <Minus size={17} />}
       </button>
@@ -25,6 +26,7 @@ export default function QuantitySelector({ id, quantity, className }) {
         onClick={() => {
           updateItem(id, quantity + 1);
         }}
+        aria-label="Increase quantity"
       >
         <Plus size={17} />
       </button>
