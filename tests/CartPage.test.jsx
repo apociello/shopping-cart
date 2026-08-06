@@ -32,7 +32,8 @@ describe('CartPage', () => {
 
     render(<CartPage />);
 
-    expect(screen.getByText('40.00 €')).toBeInTheDocument();
+    const subtotal = screen.getByLabelText('Subtotal');
+    expect(subtotal).toHaveTextContent('40.00 €');
   });
 
   it('empties the cart and navigates to Home when clicking Pay', async () => {
